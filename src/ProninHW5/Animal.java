@@ -1,20 +1,16 @@
 package ProninHW5;
 
 public abstract class Animal {
-    String name;
-    int maxDistanceRun;
-    int maxDistanceSwim;
 
-    public Animal(String name, int maxDistanceRun, int maxDistanceSwim) {
-        this.name = name;
-        this.maxDistanceRun = maxDistanceRun;
-        this.maxDistanceSwim = maxDistanceSwim;
-    }
+    String name;
+    static int animalCount = 0;
 
     public Animal(String name) {
         this.name = name;
+        animalCount++;
     }
 
     abstract void run(int r);
     abstract void swim(int s);
+    abstract void printCounterObj();
 }

@@ -1,16 +1,18 @@
 package ProninHW5;
 
 public class Cat extends Animal {
-    int maxDistanceRun = 200;
-    int maxDistanceSwim = 0;
+
+    static int catCount = 0;
 
     public Cat(String name) {
         super(name);
+        catCount++;
     }
 
     @Override
     void run(int r) {
-        if (r <= this.maxDistanceRun) {
+        int maxDistanceRun = 200;
+        if (r > 0 && r <= maxDistanceRun) {
             System.out.println("The cat " + name + " run " + r + " meters");
         } else {
             System.out.println("The cat " + name + " is tired and can't run");
@@ -19,10 +21,15 @@ public class Cat extends Animal {
 
     @Override
     void swim(int s) {
-        if (s <= this.maxDistanceSwim) {
-            System.out.println("The cat " + name + " swim " + s + " meters");
-        } else {
-            System.out.println("The cat " + name + " can't swim");
-        }
+        System.out.println("The cat " + name + " can't swim");
+    }
+
+    @Override
+    void printCounterObj() {
+        System.out.println("Count of the created objects Cat: " + catCount);
+    }
+
+    public int getCatCounter() {
+        return catCount;
     }
 }
